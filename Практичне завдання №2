@@ -1,0 +1,13 @@
+import math
+
+def lcm(a, b):
+    return abs(a * b) // math.gcd(a, b)
+
+p = int(input())
+numbers = list(map(int, input().split()))
+
+result = numbers[0]
+for i in range(1, p):
+    result = lcm(result, numbers[i])
+
+print(result)

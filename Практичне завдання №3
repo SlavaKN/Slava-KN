@@ -1,0 +1,16 @@
+p = int(input())
+
+dp0 = [0] * (p + 1)
+dp1 = [0] * (p + 1)
+dp2 = [0] * (p + 1)
+
+dp0[1] = 2
+dp1[1] = 0
+dp2[1] = 0
+
+for i in range(2, p + 1):
+    dp0[i] = dp0[i - 1] + dp1[i - 1]
+    dp1[i] = dp0[i - 1]
+    dp2[i] = dp1[i - 1]
+
+print(dp0[p] + dp1[p] + dp2[p])
